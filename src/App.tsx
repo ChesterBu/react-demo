@@ -2,7 +2,7 @@ import { useCallback, useState, memo } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-
+import useSWR from 'swr'
 
 
 const SendButton = memo((props: any)=> {
