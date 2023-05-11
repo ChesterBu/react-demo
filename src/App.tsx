@@ -10,7 +10,7 @@ import { useTexts, log } from './utils'
 const Logo = memo(()=> {
   log('Logo');
   return (
-    <div>
+    <div className='logo'>
       <a href="https://vitejs.dev" target="_blank">
         <img src={viteLogo} className="logo" alt="Vite logo" />
       </a>
@@ -21,19 +21,30 @@ const Logo = memo(()=> {
   )
 })
 
+const List = memo(()=>{
+  log('List');
+  const { data, error, loading } = useTexts()
+  if (error) {
+    return <div>failed to load</div>;
+  }
+  if (loading) {
+    return <div>loading...</div>;
+  }
+  return <div>{
+    data?.map((i)=> <div key={i.id}>{i.title}</div>)
+  }</div>
+})
+
+
 
 function App() {
   log('App');
-  console.log(useTexts())
   return (
     <>
-      <Logo />
-      <h1>Vite + React</h1>
-      <div className="card">
+      <Logo/>
+      <div className='card'>
+        <List />
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   )
 }
