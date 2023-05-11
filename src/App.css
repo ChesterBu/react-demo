@@ -3,14 +3,18 @@
   display: flex;
   flex-direction: column;
   text-align: center;
+  height: 100vh;
+}
+
+.header {
+  border-bottom: 1px solid #d6d6d6
 }
 
 .logo {
-  height: 6em;
+  height: 5em;
   padding: 1.5em;
   will-change: filter;
   transition: filter 300ms;
-  
 }
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
@@ -36,6 +40,22 @@
 
 .card {
   padding: 2em;
+  flex: 1 1 auto;
+  overflow: auto;
+}
+
+.list_content {
+  cursor: text;
+  padding: 8px;
+}
+
+.list_content_source {
+  font-size: 16px;
+}
+
+.list_content_key {
+  font-size: 12px;
+  color: #aba7b3;
 }
 
 .read-the-docs {
