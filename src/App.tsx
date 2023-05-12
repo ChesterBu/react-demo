@@ -37,10 +37,12 @@ const List = memo(() => {
     return <div>loading...</div>;
   }
   return (
-    <div>
-      {data?.map((i) => (
-        <Segment key={i.id} id={i.id} title={i.title} />
-      ))}
+    <div className="card">
+      <div>
+        {data?.map((i) => (
+          <Segment key={i.id} id={i.id} title={i.title} />
+        ))}
+      </div>
     </div>
   );
 });
@@ -50,9 +52,7 @@ function App() {
   return (
     <>
       <Logo />
-      <div className="card">
-        <List />
-      </div>
+      <List />
     </>
   );
 }
