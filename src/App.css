@@ -49,6 +49,10 @@
   padding: 8px;
 }
 
+.list_content:hover {
+  background: #f9f8f9;
+}
+
 .list_content_source {
   font-size: 16px;
 }
